@@ -1,19 +1,19 @@
+import '../Styles/Share.css'
 import React from 'react'
-import {
-    FacebookShareButton,
-    InstapaperShareButton,
-    TwitterShareButton,
-    WhatsappShareButton,
-  } from "react-share";
-  
+ import {RWebShare} from 'react-web-share'
 
-function Share() {
+const Share= (props) => {
   return (
-    <div>
-        <FacebookShareButton>Share on Facebook</FacebookShareButton>
-        <InstapaperShareButton />
-        <TwitterShareButton />
-        <WhatsappShareButton />
+    <div className='Butons'>
+      <RWebShare
+          data={{
+              text: "Image Share",
+              url:props.url ,
+              title: "Image",
+          }}
+      >
+          <button className="button button1" >Share</button>
+      </RWebShare>        
     </div>
   )
 }
